@@ -29,4 +29,4 @@ The back end for an e-commerce website. Integrates a MySQL database using ORM an
 
 ## Tutorial Video
 
-[Click here for tutorial video]()
+[Click here for tutorial video](https://youtu.be/39ZJnuekMO8)
