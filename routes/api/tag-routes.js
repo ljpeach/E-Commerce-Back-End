@@ -67,8 +67,8 @@ router.put('/:id', async (req, res) => {
           id: req.params.id
         }
       })
-    if (!tagData) {
-      res.status(404).json({ message: 'No tag found with that id!' });
+    if (!tagData[0]) {
+      res.status(404).json({ message: 'No data to update' });
       return;
     }
     res.status(200).json(tagData);

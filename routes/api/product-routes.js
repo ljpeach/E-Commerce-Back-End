@@ -84,7 +84,7 @@ router.post('/', async (req, res) => {
 });
 
 // update product
-router.put('/:id', async (req, res) => {
+router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
@@ -92,6 +92,10 @@ router.put('/:id', async (req, res) => {
     },
   })
     .then((product) => {
+      if (!product[0]) {
+        res.status(404).json({ message: "No changes to be made!" });
+        return;
+      }
       if (req.body.tagIds && req.body.tagIds.length) {
 
         ProductTag.findAll({
